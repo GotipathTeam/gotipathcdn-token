@@ -9,7 +9,7 @@ The token setting requires a cryptographic token to be included in the URL. The 
 Once a token policy is created, you will need to use the key to generate an encoded string to add to
 URLs for end user consumption as follows: 
 
-* Tokens are time limited with two parameters
+Tokens are time limited with two parameters
 * **stime** Start time (not valid before this time)
 * **etime** End time (not valid after this time)
 
