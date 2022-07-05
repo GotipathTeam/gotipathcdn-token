@@ -31,7 +31,7 @@ Basic URL:
 2. Add the time validity fields (these are required): 
 `/path/menifest.m3u8&stime=20081201060100&etime=20081201183000 `
 
-3. Encode the result of step 2 in HMACSHA1 hash using the secret key. For example please check [https://github.com/GotipathTeam/gotipathcdn-token/blob/main/CdnTokenGenerate.php](CdnTokenGenerate.php) file.
+3. Encode the result of step 2 in HMACSHA1 hash using the secret key. For example please check [CdnTokenGenerate.php](https://github.com/GotipathTeam/gotipathcdn-token/blob/main/CdnTokenGenerate.php) file.
 
 4. Calculate Hash: Take the first 20 characters of the hash and add `0` at the beginning.
 
