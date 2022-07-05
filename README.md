@@ -19,4 +19,4 @@ The format of these are: yyyymmddHHMMSS, e.g. 20120424115300, and in UTC (date â
 +%Y%m%d%H%M%S).
 They may be optionally restricted to an IP address by adding &ip=1.2.3.4 as an additional parameter.
 
-## Example with PHP
+#### A PHP example files given here
