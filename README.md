@@ -20,28 +20,23 @@ They may be optionally restricted to an IP address by adding &ip=1.2.3.4 as an a
 
 
 **Example **
-(Note that text may be wrapped in these examples. )
 
 Basic URL: 
-http://example.com/path/to/resource?clientId=12345&product=A123&other=xyz 
+`https://example.com/path/menifest.m3u8`
 
 1. Remove protocol and hostname from the hash input leaving: 
-`/path/to/resource?clientId=12345&product=A123&other=xyz `
+`/path/menifest.m3u8 `
 
-2. Add the time validity fields (these are required, not optional): 
-`/path/to/resource?clientId=12345&product=A123&other=xyz&stime=20081201060100&eti
-me=20081201183000 `
+2. Add the time validity fields (these are required): 
+`/path/menifest.m3u8&stime=20081201060100&etime=20081201183000 `
 
 3. Calculate the encoded string as 0 concatenated with the first 20 characters of an 
 HMACSHA1 hash using the result of step 2 and the secret key. 
 
 4. Build new URL: 
-`http://www.sample.com/path/to/resource?clientId=12345&product=A123&other=xyz&stim
-e=200812010601006&etime=20081201100100&encoded=0<first20chars-of-hash>`
+`https://example.com/path/menifest.m3u8&stime=200812010601006&etime=20081201100100&encoded=0<first20chars-of-hash>`
 
-Sample code for the encoded string (hash) calculation in a number of different programming 
-languages is available separately from your vendor or by contacting Conversant support team. 
 
-**Behaviour **
+**Behaviour**
 An end-user who attempts to access a prohibited content will receive a ”Forbidden” message (http response code 403) from their browser.
 
