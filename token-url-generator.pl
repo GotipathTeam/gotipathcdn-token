@@ -20,7 +20,7 @@ use Digest::HMAC_SHA1 qw(hmac_sha1 hmac_sha1_hex);
 # and an error string via $$rerr 
 sub ComputeHash
 {
-    my ($gen, $key, $uri, $rerr) = @_;
+    my ($gen, $uri, $key, $rerr) = @_;
     # Most of this error checking would not be necessary in a production
     # environment - it is provided for illustration of usage only.
     $$rerr = "ERROR: Invalid GEN value", return undef unless $gen =~ /^\d$/;
@@ -46,7 +46,7 @@ $etime = strftime("%Y%m%d%H%M%S", gmtime(time + 60*5)); #etime End time (not val
 ## Process an abspath URI
 $uri = "$path?stime=$stime&etime=$etime"; # the URI to authenticate
 print "Orig URI: $uri\n";
-$hash = ComputeHash($gen, $key, $uri, \$error); # Compute the hash code
+$hash = ComputeHash($gen, $uri, $key, \$error); # Compute the hash code
 $uri .= "&encoded=$hash"; # Append the hash code 
 print $hash ? "New URI:$uri\n" : "$error\n";
 $finalurl = "$baseUrl$uri";
